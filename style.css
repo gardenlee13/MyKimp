@@ -291,3 +291,46 @@ body {
         padding: 0.75rem 0.5rem;
     }
 }
+/* --- 모바일 대응 스타일 (반응형) --- */
+@media (max-width: 768px) {
+    
+    /* 1. 전체 레이아웃: 세로로 배치 */
+    .main-layout {
+        flex-direction: column; /* 옆으로 나란히 -> 위아래로 변경 */
+    }
+
+    .main-content {
+        margin-right: 0; /* 사이드바 여백 제거 */
+        padding: 1rem;
+        width: 100%;
+    }
+
+    /* 2. 대시보드 박스: 한 줄에 하나씩 */
+    .dashboard {
+        grid-template-columns: 1fr; /* 3단 -> 1단 변경 */
+        gap: 1rem;
+    }
+
+    /* 3. 표(Table) 가로 스크롤 만들기 (핵심!) */
+    /* 표가 화면보다 크면 좌우로 스크롤되게 만듦 */
+    .coin-table-section {
+        overflow-x: auto; 
+        display: block;
+        white-space: nowrap; /* 글자 줄바꿈 방지 */
+    }
+    
+    .coin-table th, 
+    .coin-table td {
+        padding: 0.75rem 0.5rem; /* 간격 좁히기 */
+        font-size: 0.8rem; /* 글자 크기 줄이기 */
+    }
+
+    /* 4. 채팅창: 모바일에서는 아래로 내리기 */
+    .sidebar {
+        width: 100%; /* 너비 꽉 채우기 */
+        position: relative; /* 고정 위치 해제 */
+        height: 500px; /* 적당한 높이 고정 */
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
