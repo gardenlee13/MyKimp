@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김프 - 김치프리미엄</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+</head>
+<body>
+    <!-- 메인 레이아웃 -->
+    <div class="main-layout">
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <!-- 최상단 정보 바 -->
+            <section class="dashboard">
+                <div class="dashboard-card">
+                    <h3 class="card-title">롱/숏 비율</h3>
+                    <div class="card-value">68.59% / 31.41%</div>
+                    <div class="graph-placeholder">
+                        <!-- 그래프 바가 들어갈 자리 -->
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="card-title">공포·탐욕 지수</h3>
+                    <div class="card-value">16 — 극도의 공포</div>
+                    <div class="graph-placeholder">
+                        <!-- 그래프 바가 들어갈 자리 -->
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="card-title">비트코인 점유율</h3>
+                    <div class="card-value">52.3%</div>
+                    <div class="graph-placeholder">
+                        <!-- 그래프 바가 들어갈 자리 -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- 코인 시세표 -->
+            <section class="coin-table-section">
+                <table class="coin-table">
+                    <thead>
+                        <tr>
+                            <th>코인명</th>
+                            <th>현재가(KRW)</th>
+                            <th>김프(%)</th>
+                            <th>전일대비</th>
+                            <th>거래대금</th>
+                        </tr>
+                    </thead>
+                    <tbody id="coinTableBody">
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <!-- 우측 사이드바 -->
+        <aside class="sidebar">
+            <div class="chat-container">
+                <h3 class="chat-title">실시간 채팅</h3>
+                <div class="chat-messages" id="chatMessages">
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" class="chat-input" placeholder="메시지를 입력하세요...">
+                    <button id="sendButton" class="send-button">전송</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

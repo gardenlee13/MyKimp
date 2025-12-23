@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/upbit/:path*",
+        "destination": "https://api.upbit.com/v1/:path*"
+      }
+    ]
+  }
